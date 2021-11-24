@@ -34,3 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # build Diocker imafe
+      - name: docker-build
+        run: docker build .
