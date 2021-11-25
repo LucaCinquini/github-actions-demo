@@ -18,5 +18,5 @@ jobs:
       - name: Retrieve secret
         env:
           SUPER_SECRET: ${{ secrets.THE_SUPER_SECRET }}
-        run: echo From the environment: "$env:SUPER_SECRET"
-      - run: echo From the context: ${{ secrets.THE_SUPER_SECRET }}
+        run: echo "From the environment: $env:SUPER_SECRET"
+      - run: echo "From the context: ${{ secrets.THE_SUPER_SECRET }}"
