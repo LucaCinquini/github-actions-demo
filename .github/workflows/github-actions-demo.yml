@@ -19,4 +19,4 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.THE_SUPER_SECRET }}
         run: echo "Hi"
-      - run: echo "From the context: ${{ secrets.THE_SUPER_SECRET }}"
+      - run: echo "Hello"
