@@ -21,6 +21,12 @@ jobs:
   test:
     needs: [build1, build2]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        flag: [6, 8, 10]
     steps:
       - uses: actions/checkout@v2
-      - run: ./test_server.sh
+      - name: Testing Step 
+        run: ./test_server.sh
+        env:
+          THE_FLAG: ${{ matrix.flag }}
