@@ -6,14 +6,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: ./setup_server.sh
-  build:
+  build1:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./build_server.sh
+  build2:
     needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: ./build_server.sh
   test:
-    needs: build
+    needs: [build1, build2]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
